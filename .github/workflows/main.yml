@@ -1,0 +1,18 @@
+name: Checkout and create ghcr.io image
+on: [push]
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: login_to_ghcr.io
+        uses: docker/login-action@v1.8.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          logout: true
+      - name: push_to_ghcr
+        run: docker build -t ghcr.io/kukovecrok/thumbnails-readme-action:v1 . && docker image push ghcr.io/kukovecrok/thumbnails-readme-action:v1
