@@ -1,0 +1,28 @@
+name: Create thumbnails
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install poppler
+        run: sudo apt-get install poppler-utils
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        # Remove pip install cairosvg after updating thumbnails-readme
+        run: |
+          python -m pip install --upgrade pip
+          pip install thumbnails-readme cairosvg
+
+      #- name: Run script
+        #run: python PyThumbnails.py
+      #- name: Push to github
+        #run: |
+          #git config user.name github-actions
+          #git config user.email github-actions@github.com
+          #git add .
+          #git commit -m "generated"
+          #git push

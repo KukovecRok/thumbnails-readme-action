@@ -1,0 +1,11 @@
+---
+author: "https://github.com/Tatookie"
+branding:
+  color: purple
+  icon: check
+description: "Creates thumbnails from your images and returns the README.md file"
+name: thumbnails_readme
+runs:
+  entrypoint: thumbnails_readme
+  image: docker://user/image:tag
+  using: docker
