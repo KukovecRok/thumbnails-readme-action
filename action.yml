@@ -1,0 +1,10 @@
+---
+author: "https://github.com/KukovecRok"
+branding:
+  color: 'purple'
+  icon: 'image'
+description: "Creates thumbnails from images in your repository, uploads them to image_thumbnails/ and returns the updated README.md file"
+name: 'Thumbnails Readme Action'
+runs:
+  image: docker://ghcr.io/kukovecrok/thumbnails-readme-action:v1
+  using: docker
