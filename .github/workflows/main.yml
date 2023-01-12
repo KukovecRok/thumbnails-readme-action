@@ -1,4 +1,4 @@
-name: Create thumbnails
+name: Create ghcr.io image
 on: [push]
 jobs:
   docker:
