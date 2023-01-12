@@ -1,7 +1,8 @@
 name: Create thumbnails
 on: [push]
 jobs:
-  build:
+  docker:
+    runs-on: ubuntu-latest
     steps:
     - name: login ghcr.io
       uses: docker/login-action@v1.8.0
