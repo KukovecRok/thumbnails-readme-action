@@ -12,4 +12,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           logout: true>
       - name: push_to_ghcr
-        run: docker build --tag ghcr.io/kukovecrok/thumbnails_readme_action:v1  . && docker image push ghcr.io/kukovecrok/thumbnails_readme_action:v1
+        run: docker build --tag ghcr.io/kukovecrok/thumbnails_readme_action:v1 .
