@@ -6,6 +6,16 @@ branding:
 description: "Creates thumbnails from your images and returns the README.md file"
 name: thumbnails_readme
 runs:
-  entrypoint: thumbnails_readme
-  image: docker://user/image:tag
-  using: docker
+  using: "composite"
+  steps:
+    - name: run_docker_image
+      entrypoint: thumbnails_readme
+      image: docker://tatookie/image_thumbnails_action:v1
+      using: docker
+    - name: Pull request artifacts
+      uses: gavv/pull-request-artifacts@v1.0.0
+      with:
+        commit: ${{ github.event.pull_request.head.sha }}
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        artifacts-branch: artifacts
+

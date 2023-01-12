@@ -1,4 +1,4 @@
-import thumbnails_readme
+from thumbnails_readme import thumbnails_readme
 import os
 from pathlib import Path
 
@@ -11,8 +11,9 @@ pdf_quality = 15
 poppler_path = None
 
 # path
-path = os.getcwd()
-path = os.path.dirname(path)
+#path = os.getcwd()
+#path = os.path.dirname(path)
+path = os.getenv('GITHUB_WORKSPACE')
 
 # Do not forget to add your path to image thumbnails folder
 skiplist = (

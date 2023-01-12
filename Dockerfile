@@ -5,9 +5,6 @@ FROM python:3.11.1-alpine
 RUN pip install thumbnails_readme cairosvg
 RUN apk add poppler-utils
 
-# Set the working directory to /data
-WORKDIR /data
-
 # Copy the script
 COPY entrypoint.sh /entrypoint.sh
 COPY thumbnails_readme_action.py /thumbnails_readme_action.py
