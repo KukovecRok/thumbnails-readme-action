@@ -4,6 +4,9 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
       - name: login_to_ghcr.io
         uses: docker/login-action@v1.8.0
         with:
