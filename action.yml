@@ -11,7 +11,7 @@ runs:
     - name: run_docker_image
       entrypoint: thumbnails_readme
       image: docker://tatookie/image_thumbnails_action:v1
-      using: docker
+      uses: docker
     - name: Pull request artifacts
       uses: gavv/pull-request-artifacts@v1.0.0
       with:
