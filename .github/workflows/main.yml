@@ -1,26 +1,14 @@
-name: Create thumbnails
+name: Create docker thumbnails ghcr image
 on: [push]
 jobs:
   build:
-    runs-on: tatookie/thumbnails_readme_action:v1
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-      - name: Install dependencies
-        # Remove pip install cairosvg after updating thumbnails-readme
-        run: |
-          python -m pip install --upgrade pip
-          pip install thumbnails-readme cairosvg
-
-      #- name: Run script
-        #run: python thumbnails_readme_action.py
-      #- name: Push to github
-        #run: |
-          #git config user.name github-actions
-          #git config user.email github-actions@github.com
-          #git add .
-          #git commit -m "generated"
-          #git push
+        - name: login ghcr.io
+          uses: docker/login-action@v1.8.0
+          with:
+            registry: ghcr.io
+            username: ${{ github.actor }}
+            password: ${{ secrets.GITHUB_TOKEN }}
+            logout: true>
+        - name: docker build push to ghcr
+          run: docker build --tag ghcr.io/KukovecRok/thumbnails_readme_action:v1  . && docker image push ghcr.io/KukovecRok/thumbnails_readme_action:v1
