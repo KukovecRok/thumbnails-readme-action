@@ -13,8 +13,6 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          logout: true>
+          logout: true
       - name: push_to_ghcr
-        run: |
-          ls -la
-          docker build -t ghcr.io/kukovecrok/pythumbnailsaction:v1 . && docker image push ghcr.io/kukovecrok/pythumbnailsaction:v1
+        run: docker build -t ghcr.io/kukovecrok/pythumbnailsaction:v1 . && docker image push ghcr.io/kukovecrok/pythumbnailsaction:v1
