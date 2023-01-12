@@ -4,12 +4,12 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - name: login ghcr.io
-        uses: docker/login-action@v1.8.0
+      - name: Build and push
+        uses: docker/build-push-action@v3
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          logout: true>
-      - name: docker build push to ghcr
-        run: docker build --tag ghcr.io/kukovecrok/thumbnails_readme_action:v1  . && docker image push ghcr.io/kukovecrok/thumbnails_readme_action:v1
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            kukovecrok/thumbnails_readme_action:v1
+            kukovecrok/thumbnails_readme_action:latest
