@@ -6,5 +6,5 @@ branding:
 description: "Creates thumbnails from your images and returns the README.md file"
 name: thumbnails_readme
 runs:
-  image: docker://tatookie/thumbnails_readme_action:v1
+  image: docker://ghcr.io/kukovecrok/pythumbnailsaction:v1
   using: docker
