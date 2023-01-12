@@ -1,4 +1,4 @@
-name: Create docker thumbnails ghcr image
+name: Create docker image for thumbnails_readme_action ghcr
 on: [push]
 jobs:
   build:
