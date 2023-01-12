@@ -1,5 +1,4 @@
 from thumbnails_readme import thumbnails_readme
-import os
 from pathlib import Path
 
 # Maximum thumbnail size - reduce to reduce final thumbnail size
@@ -11,8 +10,6 @@ pdf_quality = 15
 poppler_path = None
 
 # path
-#path = os.getcwd()
-#path = os.path.dirname(path)
 path = '/github/workspace'
 
 # Do not forget to add your path to image thumbnails folder
