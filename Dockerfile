@@ -9,5 +9,7 @@ RUN apk add poppler-utils
 COPY entrypoint.sh /entrypoint.sh
 COPY thumbnails_readme_action.py /thumbnails_readme_action.py
 
+RUN chmod +x ./entrypoint.sh
+
 # Entrypoint for container
 ENTRYPOINT ["/entrypoint.sh"]
