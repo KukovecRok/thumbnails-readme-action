@@ -13,7 +13,7 @@ poppler_path = None
 # path
 #path = os.getcwd()
 #path = os.path.dirname(path)
-path = os.getenv('GITHUB_WORKSPACE')
+path = os.getenv('RUNNER_WORKSPACE')
 
 # Do not forget to add your path to image thumbnails folder
 skiplist = (
