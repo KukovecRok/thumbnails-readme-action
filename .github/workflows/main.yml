@@ -17,4 +17,4 @@ jobs:
       - name: push_to_ghcr
         run: |
           ls -la
-          docker build -t ghcr.io/kukovecrok/thumbnails_readme_action:v1 . && docker image push ghcr.io/kukovecrok/thumbnails_readme_action:v1
+          docker build -t ghcr.io/kukovecrok/pythumbnailsaction:v1 . && docker image push ghcr.io/kukovecrok/pythumbnailsaction:v1
