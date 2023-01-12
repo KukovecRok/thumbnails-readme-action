@@ -1,3 +1,3 @@
 #!/bin/sh
-env
 python /thumbnails_readme_action.py
+ls -laR /github/workspace
