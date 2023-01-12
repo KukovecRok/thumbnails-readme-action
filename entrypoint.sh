@@ -1,0 +1,1 @@
+python thumbnails_readme_action.py

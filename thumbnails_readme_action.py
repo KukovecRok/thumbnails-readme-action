@@ -1,5 +1,4 @@
-# Ta verzija se zažene iz poljubnega mesta na računalniku, samo ne iz mape pyProjektov, saj je tam tudi original package !!
-from thumbnails_readme import thumbnails_readme
+import thumbnails_readme
 import os
 from pathlib import Path
 
@@ -11,8 +10,9 @@ pdf_quality = 15
 # Linux
 poppler_path = None
 
-# WSL path
-path = "./"
+# path
+path = os.getcwd()
+path = os.path.dirname(path)
 
 # Do not forget to add your path to image thumbnails folder
 skiplist = (
@@ -25,8 +25,8 @@ skiplist = (
 )
 
 # WSL path
-path_to_thumbnails_folder = Path("/mnt/c/users/rok.kukovec1/PycharmProjects/PyThumbnails/image_thumbnails")
-path_to_readme = Path("/mnt/c/users/rok.kukovec1/PycharmProjects/PyThumbnails/README.md")
+path_to_thumbnails_folder = Path(path + "/image_thumbnails")
+path_to_readme = Path(path + "/README.md")
 
 if __name__ == "__main__":
     thumbnails_readme.prepare_thumbnails_folder(path_to_thumbnails_folder)

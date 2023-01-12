@@ -2,10 +2,8 @@ name: Create thumbnails
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: tatookie/thumbnails_readme_action:v1
     steps:
-      - name: Install poppler
-        run: sudo apt-get install poppler-utils
       - uses: actions/checkout@v3
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
@@ -18,7 +16,7 @@ jobs:
           pip install thumbnails-readme cairosvg
 
       #- name: Run script
-        #run: python PyThumbnails.py
+        #run: python thumbnails_readme_action.py
       #- name: Push to github
         #run: |
           #git config user.name github-actions
