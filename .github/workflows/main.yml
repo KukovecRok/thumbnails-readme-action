@@ -3,12 +3,13 @@ on: [push]
 jobs:
   build:
     steps:
-        - name: login ghcr.io
-          uses: docker/login-action@v1.8.0
-          with:
-            registry: ghcr.io
-            username: ${{ github.actor }}
-            password: ${{ secrets.GITHUB_TOKEN }}
-            logout: true>
-        - name: docker build push to ghcr
-          run: docker build --tag ghcr.io/KukovecRok/thumbnails_readme_action:v1  . && docker image push ghcr.io/KukovecRok/thumbnails_readme_action:v1
+      - runs-on: ubuntu-latest
+      - name: login ghcr.io
+        uses: docker/login-action@v1.8.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          logout: true>
+      - name: docker build push to ghcr
+        run: docker build --tag ghcr.io/KukovecRok/thumbnails_readme_action:v1  . && docker image push ghcr.io/KukovecRok/thumbnails_readme_action:v1
