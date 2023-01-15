@@ -40,6 +40,19 @@ jobs:
             image_thumbnails/**
 ```
 
+### Create Pull-Request
+
+```yml
+      - run: sudo chown -R $USER:$USER .
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4.2.3
+        with:
+          base: ${{ github.head_ref }}
+          add-paths: |
+            README.md
+            image_thumbnails/**
+```
+
 ### Auto-commit
 
 ```yml
