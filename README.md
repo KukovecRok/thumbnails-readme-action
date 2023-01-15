@@ -47,10 +47,20 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4.2.3
         with:
-          base: ${{ github.head_ref }}
+          commit-message: create-pull-request Update README.md and image_thumbnails
           add-paths: |
             README.md
             image_thumbnails/**
+          base: ${{ github.head_ref }}
+          title: Update README.md and image_thumbnails
+          body: Automatically generated image thumbnails and pull-request
+```
+#### Imporant with Pull-Request
+
+To prevent PR loop, you can, for example, add an if statement. This provided example checks, if latest commit message includes "create-pull-request". If it does, it skips the workflow action, since image thumbnails have already been generated. 
+
+```yml
+if: "!contains(github.event.head_commit.message, 'create-pull-request')"
 ```
 
 ### Auto-commit
