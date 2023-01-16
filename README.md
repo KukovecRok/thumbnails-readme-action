@@ -77,3 +77,7 @@ if: "!contains(github.event.head_commit.message, 'create-pull-request')"
 
 Copyright © 2023 [Tatookie](https://github.com/KukovecRok). <br /> 
 This project is MIT licensed.
+
+## Disclaimer
+
+This framework is provided as-is, and there are no guarantees that it fits your purposes or that it is bug-free. Use it at your own risk!
