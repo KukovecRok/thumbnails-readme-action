@@ -2,7 +2,7 @@
 FROM python:3.11.1-alpine
 
 # Install dependencies
-RUN pip install thumbnails_readme cairosvg \
+RUN pip install thumbnails_readme \
     && apk add poppler-utils
 
 # Copy the script
