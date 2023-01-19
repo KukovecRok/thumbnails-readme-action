@@ -8,9 +8,10 @@ This action generates thumbnails for images in your repository and adds them to 
 ## How to use
 
 You may use this action in your workflow to generate thumbnails for images in your repository and add them to README.md file.
-There are two ways to use this action:
+There are three ways to use this action:
 * create artifacts (may upload manually)
 * github-actions[bot] directly commits to your repository
+* github-actions[bot] opens a pull request on your repository
 
 ### Create a workflow
 
