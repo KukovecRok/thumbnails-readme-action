@@ -27,7 +27,7 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
       - name: generate_thumbnails
-        uses: KukovecRok/thumbnails-readme-action@v1.4
+        uses: KukovecRok/thumbnails-readme-action@v2.3
 ```
 
 ### Create artifact
