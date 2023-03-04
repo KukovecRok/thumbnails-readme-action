@@ -19,7 +19,9 @@ skiplist = (
     ".idea",
     "idea",
     "image_thumbnails",
+    ".pytest_cache",
     "thumbnails_readme",
+    "venv",
 )
 
 # WSL path
@@ -34,7 +36,7 @@ if __name__ == "__main__":
         path_to_readme,
         poppler_path,
         path_to_thumbnails_folder,
-        MAX_SIZE,
+        max_size,
         pdf_quality,
         skiplist,
     )
