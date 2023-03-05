@@ -43,6 +43,8 @@ jobs:
 
 ### Create Pull-Request
 
+To allow github-actions-bot to create pull-requests, go to repository - settings - actions - general - Workflow permissions: allow read and write permission & Allow GitHub Actions to create and approve pull requests
+
 ```yml
       - run: sudo chown -R $USER:$USER .
       - name: Create Pull Request
