@@ -2,7 +2,7 @@ from thumbnails_readme import thumbnails_readme
 from pathlib import Path
 
 # Maximum thumbnail size - reduce to reduce final thumbnail size
-MAX_SIZE = (128, 128)
+max_size = (128, 128)
 # PDF quality, lower the number, lower the quality
 pdf_quality = 15
 
