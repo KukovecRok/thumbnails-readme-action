@@ -1,3 +1,5 @@
+"""Action for thumbnails_readme.py."""
+
 from thumbnails_readme import thumbnails_readme
 from pathlib import Path
 
@@ -26,7 +28,7 @@ skiplist = (
 
 # WSL path
 path_to_thumbnails_folder = path / "/image_thumbnails"
-path_to_readme = path / "/README.md"
+path_to_readme = Path(path / 'README.md')
 
 if __name__ == "__main__":
     thumbnails_readme.prepare_thumbnails_folder(path_to_thumbnails_folder)
