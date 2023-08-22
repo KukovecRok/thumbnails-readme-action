@@ -12,7 +12,7 @@ pdf_quality = 15
 poppler_path = None
 
 # path
-path = Path('/github/workspace')
+path = Path.cwd()
 
 # Do not forget to add your path to image thumbnails folder
 skiplist = (
@@ -27,7 +27,7 @@ skiplist = (
 )
 
 # WSL path
-path_to_thumbnails_folder = path / "/image_thumbnails"
+path_to_thumbnails_folder = path / 'image_thumbnails'
 path_to_readme = Path(path / 'README.md')
 
 if __name__ == "__main__":
@@ -36,9 +36,9 @@ if __name__ == "__main__":
     thumbnails_readme.crawl(
         path,
         path_to_readme,
-        poppler_path,
         path_to_thumbnails_folder,
         max_size,
         pdf_quality,
         skiplist,
+        poppler_path,
     )

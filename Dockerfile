@@ -2,8 +2,8 @@
 FROM python:3.11.1-alpine
 
 # Install dependencies
-RUN pip install thumbnails_readme \
-    && apk add poppler-utils
+RUN apk add poppler-utils && \
+    pip install thumbnails_readme
 
 # Copy the script
 COPY entrypoint.sh /entrypoint.sh
