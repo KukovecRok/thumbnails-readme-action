@@ -2,7 +2,7 @@ from thumbnails_readme import thumbnails_readme
 from pathlib import Path
 
 # Maximum thumbnail size - reduce to reduce final thumbnail size
-MAX_SIZE = (128, 128)
+max_size = (128, 128)
 # PDF quality, lower the number, lower the quality
 pdf_quality = 15
 
@@ -10,7 +10,7 @@ pdf_quality = 15
 poppler_path = None
 
 # path
-path = '/github/workspace'
+path = Path('/github/workspace')
 
 # Do not forget to add your path to image thumbnails folder
 skiplist = (
@@ -23,8 +23,8 @@ skiplist = (
 )
 
 # WSL path
-path_to_thumbnails_folder = Path(path + "/image_thumbnails")
-path_to_readme = Path(path + "/README.md")
+path_to_thumbnails_folder = path / "/image_thumbnails"
+path_to_readme = path / "/README.md"
 
 if __name__ == "__main__":
     thumbnails_readme.prepare_thumbnails_folder(path_to_thumbnails_folder)
@@ -34,7 +34,7 @@ if __name__ == "__main__":
         path_to_readme,
         poppler_path,
         path_to_thumbnails_folder,
-        MAX_SIZE,
+        max_size,
         pdf_quality,
         skiplist,
     )
