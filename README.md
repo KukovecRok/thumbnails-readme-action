@@ -8,9 +8,10 @@ This action generates thumbnails for images in your repository and adds them to 
 ## How to use
 
 You may use this action in your workflow to generate thumbnails for images in your repository and add them to README.md file.
-There are two ways to use this action:
+There are three ways to use this action:
 * create artifacts (may upload manually)
 * github-actions[bot] directly commits to your repository
+* github-actions[bot] opens a pull request on your repository
 
 ### Create a workflow
 
@@ -26,7 +27,7 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
       - name: generate_thumbnails
-        uses: KukovecRok/thumbnails-readme-action@v1.3
+        uses: KukovecRok/thumbnails-readme-action@v3.1
 ```
 
 ### Create artifact
@@ -41,6 +42,8 @@ jobs:
 ```
 
 ### Create Pull-Request
+
+To allow github-actions-bot to create pull-requests, go to repository - settings - actions - general - Workflow permissions: allow read and write permission & Allow GitHub Actions to create and approve pull requests
 
 ```yml
       - run: sudo chown -R $USER:$USER .
@@ -77,3 +80,7 @@ if: "!contains(github.event.head_commit.message, 'create-pull-request')"
 
 Copyright © 2023 [Tatookie](https://github.com/KukovecRok). <br /> 
 This project is MIT licensed.
+
+## Disclaimer
+
+This framework is provided as-is, and there are no guarantees that it fits your purposes or that it is bug-free. Use it at your own risk!

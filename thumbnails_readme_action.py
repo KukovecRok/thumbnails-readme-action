@@ -19,7 +19,9 @@ skiplist = (
     ".idea",
     "idea",
     "image_thumbnails",
+    ".pytest_cache",
     "thumbnails_readme",
+    "venv",
 )
 
 # WSL path
