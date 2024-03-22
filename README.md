@@ -48,7 +48,7 @@ To allow github-actions-bot to create pull-requests, go to repository - settings
 ```yml
       - run: sudo chown -R $USER:$USER .
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4.2.3
+        uses: peter-evans/create-pull-request@v6
         with:
           commit-message: create-pull-request Update README.md and image_thumbnails
           add-paths: |
